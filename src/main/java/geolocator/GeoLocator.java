@@ -1,15 +1,12 @@
 package geolocator;
 
-import java.net.URL;
-
-import java.io.IOException;
-
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.google.common.net.UrlEscapers;
-
 import org.apache.commons.io.IOUtils;
+
+import java.io.IOException;
+import java.net.URL;
 
 public class GeoLocator {
 
@@ -38,7 +35,7 @@ public class GeoLocator {
     public static void main(String[] args) throws IOException {
         try {
             String arg = args.length > 0 ? args[0] : null;
-            System.out.println(new GeoLocator().getGeoLocation(arg));
+            System.out.println(new GeoLocator().getGeoLocation(arg).toString());
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
